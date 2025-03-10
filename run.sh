@@ -1,0 +1,1 @@
+python src/quant.py --config /media/ava/DATA3/DATA/athirooban/shabari/harish/rangenet/configs/ptq_5x64x2048.json  2>&1 | tee -a /media/ava/DATA3/DATA/athirooban/shabari/harish/rangenet/logs/app.log

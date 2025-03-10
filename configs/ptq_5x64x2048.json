@@ -1,0 +1,29 @@
+{
+    "name": "rangenet",
+    "framework": "pytorch",
+    "task": "sematic segmentation",
+    "CUDA": "1",
+    "input_shape": [1, 5, 64, 2048],
+    "training_dataset": "Kitti",
+    "auto_quant":false, 
+    "quantize": true,
+    "optimization_config": {
+        "quantization_configuration":
+            {
+                "type": "rangenet_w8a8",
+                "param_bw": 8,
+                "output_bw": 8,
+                "input_quantization": true,
+                "quant_scheme": "tf_enhanced",
+                "techniques": ["cle","bn"]
+            }
+        },
+    "allowed_accuracy_drop": 1,
+    "dataset": "/media/ava/DATA/aleesha/datasets",
+    "pretrained_model": "artifacts/squeezeseg",
+    "exports_path": "/media/ava/DATA3/DATA/athirooban/shabari/harish/rangenet/artifacts",
+    "exports_name": "rangenet_manual_ptq_5x64x2048",
+    "Result":"src/prediction",
+    "qat":true,
+    "qat_name":"rangenet_qat_5x64x2048"
+}
