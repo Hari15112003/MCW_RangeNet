@@ -37,24 +37,8 @@ This project is configured for **semantic segmentation** using **RangeNet** with
 - **QAT Model Name:** `rangenet_qat_5x64x2048`
 
 ## Usage Instructions
+- Run by using  `quant.py --config path_to_config_file` 
 
-### 1. Model Training
-To train the model with QAT, ensure the dataset is correctly set up and run:
-```bash
-python train.py --config rangenet_qat_5x64x2048
-```
-
-### 2. Post-Training Quantization (PTQ)
-To apply PTQ manually:
-```bash
-python quantize.py --config rangenet_manual_ptq_5x64x2048
-```
-
-### 3. Running Inference
-To generate predictions using the trained model:
-```bash
-python predict.py --model artifacts/squeezeseg --input data/sample_input
-```
 Results will be stored in `src/prediction`.
 
 ## Requirements
